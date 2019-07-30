@@ -4,6 +4,7 @@
     "version": "1.0.0",
     "main": "webpack.config.js",
     "scripts": {
+        "start": "yarn dev",
         "now-build": "npm run build",
         "build": "webpack",
         "dev": "webpack-dev-server --open",
