@@ -21,7 +21,6 @@ function useCategoriesData () {
 
 export const ListOfCategories = () => {
   const { categories, loading } = useCategoriesData()
-  console.log('categories:', categories)
   const [showFixed, setShowFixed] = useState(false)
 
   useEffect(() => {
