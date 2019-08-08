@@ -4,7 +4,6 @@
     "version": "1.0.0",
     "main": "webpack.config.js",
     "scripts": {
-        "start": "yarn dev",
         "now-build": "npm run build",
         "build": "webpack",
         "dev": "webpack-dev-server --open",
@@ -12,6 +11,7 @@
         "lint": "standard"
     },
     "dependencies": {
+        "intersection-observer": "^0.7.0",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "react-icons": "^3.7.0",
