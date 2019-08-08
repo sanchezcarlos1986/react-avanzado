@@ -8,6 +8,7 @@
         "now-build": "npm run build",
         "build": "webpack",
         "dev": "webpack-dev-server --open",
+        "start": "npm run dev",
         "lint": "standard"
     },
     "dependencies": {
