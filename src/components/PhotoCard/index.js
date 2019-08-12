@@ -16,7 +16,7 @@ export const PhotoCard = ({ id, src = DEFAULT_IMAGE, likes = 0 }) => {
   return (
     <Article ref={element}>
       {show && <Fragment>
-        <a href={`/detail/${id}`}>
+        <a href={`/?detail=${id}`}>
           <ImgWrapper>
             <Img src={src} alt='ble' />
           </ImgWrapper>
