@@ -1,15 +1,6 @@
 import styled from 'styled-components'
 import { Link as LinkRouter } from '@reach/router'
-
-export const Link = styled(LinkRouter)`
-  align-items: center;
-  color: #888;
-  display: inline-flex;
-  height: 100%;
-  justify-content: center;
-  text-decoration: none;
-  width: 100%;
-`
+import { fadeIn } from '../../styles/animation'
 
 export const Nav = styled.nav`
   align-items: center;
@@ -26,4 +17,27 @@ export const Nav = styled.nav`
   right: 0;
   width: 100%;
   z-index: 9999;
+`
+
+export const Link = styled(LinkRouter)`
+  align-items: center;
+  color: #888;
+  display: inline-flex;
+  height: 100%;
+  justify-content: center;
+  text-decoration: none;
+  width: 100%;
+
+  &[aria-current] {
+    color: black;
+
+    &:after {
+      ${fadeIn({ time: '0.5s' })};
+      bottom: 0;
+      content: '·';
+      font-size: 34px;
+      line-height: 20px;
+      position: absolute;
+    }
+  }
 `
