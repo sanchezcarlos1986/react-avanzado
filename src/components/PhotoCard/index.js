@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import { Article, ImgWrapper, Img } from './styles'
-import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { useNearScreen } from '../../hooks/useNearScreen'
 import { FavButton } from '../FavButton'
 import { ToggleLikeMutation } from '../../container/ToggleLikeMutation'
@@ -9,9 +8,7 @@ import { Link } from '@reach/router'
 
 const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
 
-export const PhotoCard = ({ id, src = DEFAULT_IMAGE, likes = 0 }) => {
-  const key = `like-${id}`
-  const [liked, setLiked] = useLocalStorage(key, false)
+export const PhotoCard = ({ id, src = DEFAULT_IMAGE, likes = 0, liked }) => {
   const [show, element] = useNearScreen()
 
   return (
@@ -25,10 +22,7 @@ export const PhotoCard = ({ id, src = DEFAULT_IMAGE, likes = 0 }) => {
         <ToggleLikeMutation>
           {
             (toggleLike) => {
-              const handleFavClick = () => {
-                !liked && toggleLike({ variables: { input: { id } } })
-                setLiked(!liked)
-              }
+              const handleFavClick = () => toggleLike({ variables: { input: { id } } })
               return <FavButton liked={liked} likes={likes} onClick={handleFavClick} />
             }
           }
