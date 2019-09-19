@@ -2,13 +2,18 @@ import React, { Fragment, useState, useEffect } from 'react'
 import { Category } from '../Category'
 import { List, Item } from './styles'
 
+const controller = new window.AbortController()
+const signal = controller.signal
+
 function useCategoriesData () {
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(false)
 
+  const url = 'https://petgram-server-csanchez.sanchezcarlos1986.now.sh/categories'
+
   useEffect(() => {
     setLoading(true)
-    window.fetch('https://petgram-server-csanchez.sanchezcarlos1986.now.sh/categories')
+    window.fetch(url, { signal })
       .then(res => res.json())
       .then(data => {
         setCategories(data)
@@ -33,6 +38,8 @@ export const ListOfCategories = () => {
 
     return () => {
       document.removeEventListener('scroll', onScroll)
+      controller.abort()
+      console.log('Download aborted')
     }
   }, [showFixed])
 
