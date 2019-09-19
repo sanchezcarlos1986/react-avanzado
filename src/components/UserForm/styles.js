@@ -1,35 +1,30 @@
 import styled from 'styled-components'
-import { fadeIn } from '../../styles/animation'
 
-export const Article = styled.article`
-  min-height: 200px;
+export const Form = styled.form`
+  padding: 16px 0;
 `
 
-export const ImgWrapper = styled.div`
-  border-radius: 10px;
+export const Input = styled.input`
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  padding: 8px 4px;
   display: block;
-  height: 0;
-  overflow: hidden;
-  padding: 56.25% 0 0 0;
-  position: relative;
-  width: 100%;
-`
-
-export const Img = styled.img`
-  ${fadeIn()};
-  box-shadow: 0 10px 14px rgba(0, 0, 0, .2);
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
   width: 100%;
 `
 
 export const Button = styled.button`
-  align-items: center;
-  display: flex; 
-  padding-top: 8px;    
-  & svg {
-    margin-right: 4px;
-  }
+  background: #8d00ff;
+  border-radius: 3px;
+  color: #fff;
+  height: 32px;
+  display: block;
+  width: 100%;
+  text-align: center;
+`
+
+export const Title = styled.h2`
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 0;
 `
