@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 
-export function useNearScreen () {
+export const useNearScreen = () => {
   const element = useRef(null)
   const [show, setShow] = useState(false)
 
@@ -19,7 +19,7 @@ export function useNearScreen () {
       })
       observer.observe(element.current)
     })
-  }, [element])  
+  }, [element])
 
   return [show, element]
 }
