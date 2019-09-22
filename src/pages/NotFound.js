@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const NotFound = ({ categoryId }) => {
+export default () => {
   return (
     <h1>This page doesn't exist :(</h1>
   )

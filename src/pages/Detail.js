@@ -3,7 +3,7 @@ import { PhotoCardWithQuery } from '../container/PhotoCardWithQuery'
 
 import { Layout } from '../components/Layout'
 
-export const Detail = ({ detailId }) => {
+export default ({ detailId }) => {
   return (
     <Layout title={`Picture ${detailId}`}>
       <PhotoCardWithQuery id={detailId} />
