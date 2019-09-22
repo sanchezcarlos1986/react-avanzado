@@ -3,6 +3,7 @@ import { Article, ImgWrapper, Img } from './styles'
 import { useNearScreen } from '../../hooks/useNearScreen'
 import { FavButton } from '../FavButton'
 import { ToggleLikeMutation } from '../../container/ToggleLikeMutation'
+import PropTypes from 'prop-types'
 
 import { Link } from '@reach/router'
 
@@ -30,4 +31,16 @@ export const PhotoCard = ({ id, src = DEFAULT_IMAGE, likes = 0, liked }) => {
       </Fragment>}
     </Article>
   )
+}
+
+PhotoCard.propTypes = {
+  id: PropTypes.string,
+  src: PropTypes.string,
+  likes: (props, propName, componentName) => {
+    const propValue = props[propName]
+
+    if (propValue === undefined) return new Error(`${propValue} value must be defined`)
+    if (propValue < 0) return new Error(`${propValue} value must be greater than 0`)
+  },
+  liked: PropTypes.bool
 }
