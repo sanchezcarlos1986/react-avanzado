@@ -8,6 +8,7 @@
   "build": "webpack",
   "dev": "webpack-dev-server --history-api-fallback --open",
   "start": "npm run dev",
+  "serve:dev": "webpack --mode 'development' && npx serve dist -s",
   "lint": "standard"
  },
  "dependencies": {
