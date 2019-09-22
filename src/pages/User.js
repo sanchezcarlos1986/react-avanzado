@@ -1,13 +1,14 @@
-import React, { Fragment, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Context } from '../Context'
 import { SubmitButton } from '../components/SubmitButton'
+
+import { Layout } from '../components/Layout'
 
 export const User = () => {
   const { removeAuth } = useContext(Context)
   return (
-    <Fragment>
-      <h1>User</h1>
+    <Layout title='User Information'>
       <SubmitButton onClick={removeAuth}>Log Out</SubmitButton>
-    </Fragment>
+    </Layout>
   )
 }
